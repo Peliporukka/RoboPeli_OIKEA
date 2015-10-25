@@ -28,7 +28,7 @@ coordx = 8
 coordy = 8
 roomArray[coordx,coordy] = rm_List[0];
 
-for( i = 1; i < 5; i++ )
+for( i = 1; i < 8; i++ )
 {
     switch(irandom(3))
     {
@@ -45,8 +45,10 @@ for( i = 1; i < 5; i++ )
         coordy = coordy - 1;
         break;
     }
-    
+    if( roomArray[coordx,coordy] = -1 )
+    {
     roomArray[coordx,coordy] = rm_List[random_range(1,3)];
+    }
     
 }
 
