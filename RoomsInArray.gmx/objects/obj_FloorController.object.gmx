@@ -168,6 +168,9 @@ for( i = 0; i &lt; 64; i++)
         draw_rectangle(i*16, j*12, i*16 + 16, j*12 + 12, false);
     }
 }
+
+draw_set_colour(c_red);
+draw_rectangle(room_current_x*16, room_current_y*12, room_current_x*16 + 16, room_current_y*12 + 12, false);
 </string>
           </argument>
         </arguments>
