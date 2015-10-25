@@ -14,9 +14,9 @@ b = 0;
     {
     roomArray[a,b] = -1;
     b = b + 1;
-    }until( b > 15)
+    }until( b > 64)
 a = a + 1;
-}until(a > 15)
+}until(a > 64)
 
 /////////////////////////////////
 // GENERATION RULES START HERE //
@@ -24,11 +24,11 @@ a = a + 1;
 
 //Generate a five room dungeon
 //Coordinates that we start the generation from
-coordx = 8
-coordy = 8
+coordx = 32
+coordy = 32
 roomArray[coordx,coordy] = rm_List[0];
 
-for( i = 1; i < 8; i++ )
+for( i = 1; i < 24; i++ )
 {
     switch(irandom(3))
     {

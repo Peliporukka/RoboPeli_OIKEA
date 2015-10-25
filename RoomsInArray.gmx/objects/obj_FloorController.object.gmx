@@ -38,8 +38,8 @@ roomList[3] = rm_1_3
 floorArray = scr_floorGenerate(roomList);
 
 //Set current room coords
-room_current_x = 8
-room_current_y = 8
+room_current_x = 32
+room_current_y = 32
 
 //Goto current room
 room_goto(floorArray[room_current_x, room_current_y])
@@ -160,9 +160,9 @@ if( floorArray[room_current_x, room_current_y + 1] = -1 )
             <string>map_grid = ds_grid_create(16,12);
 
 draw_set_colour(c_black);
-for( i = 0; i &lt; 16; i++)
+for( i = 0; i &lt; 64; i++)
 {
-    for( j = 0; j &lt; 16; j++)
+    for( j = 0; j &lt; 64; j++)
     {
         if(floorArray[i,j] != -1)
         draw_rectangle(i*16, j*12, i*16 + 16, j*12 + 12, false);
