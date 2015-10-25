@@ -14,9 +14,9 @@ b = 0;
     {
     roomArray[a,b] = -1;
     b = b + 1;
-    }until( b > 14)
+    }until( b > 15)
 a = a + 1;
-}until(a > 14)
+}until(a > 15)
 
 /////////////////////////////////
 // GENERATION RULES START HERE //

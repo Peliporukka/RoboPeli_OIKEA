@@ -164,6 +164,8 @@ for( i = 0; i &lt; 16; i++)
 {
     for( j = 0; j &lt; 16; j++)
     {
+        if(floorArray[i,j] != -1)
+        draw_rectangle(i*16, j*12, i*16 + 16, j*12 + 12, false);
     }
 }
 </string>
