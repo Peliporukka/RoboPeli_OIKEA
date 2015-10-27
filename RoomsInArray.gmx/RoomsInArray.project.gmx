@@ -8,6 +8,10 @@
   <sprites name="sprites">
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\spr_Wall</sprite>
+    <sprite>sprites\spr_DoorUpRight</sprite>
+    <sprite>sprites\spr_DoorUpLeft</sprite>
+    <sprite>sprites\spr_DoorDownRight</sprite>
+    <sprite>sprites\spr_DoorDownLeft</sprite>
     <sprite>sprites\spr_Wall2</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -19,11 +23,17 @@
     <object>objects\obj_Player</object>
     <object>objects\obj_FloorController</object>
     <object>objects\obj_Wall</object>
+    <objects name="Doors">
+      <object>objects\obj_DoorUpLeft</object>
+      <object>objects\obj_DoorUpRight</object>
+      <object>objects\obj_DoorDownRight</object>
+      <object>objects\obj_DoorDownLeft</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room4</room>
-    <room>rooms\rm_Start</room>
     <rooms name="roomPool1">
+      <room>rooms\rm_Start</room>
       <room>rooms\rm_1_1</room>
       <room>rooms\rm_1_2</room>
       <room>rooms\rm_1_3</room>

@@ -66,11 +66,15 @@ room_goto(floorArray[room_current_x, room_current_y])
           <argument>
             <kind>1</kind>
             <string>//Exit room left
-if obj_Player.x&lt;0
+with(obj_Player)
 {
-    room_goto(floorArray[room_current_x-1, room_current_y])
-    room_current_x = room_current_x - 1
-    obj_Player.x = room_width - sprite_width;
+    if place_meeting(x, y, obj_DoorUpLeft)
+    {
+        room_goto(other.floorArray[room_current_x-1, room_current_y]);
+        other.room_current_x = other.room_current_x - 1;
+        obj_Player.x = 448;
+        obj_Player.y = 336;
+    }
 }
 //Exit room right
 if obj_Player.x&gt;room_width
@@ -118,23 +122,27 @@ if obj_Player.y&gt;room_height
             <string>//Check if the cell left has a room
 if( floorArray[room_current_x - 1, room_current_y] = -1 )
 {
-    instance_create( 32, room_height/2, obj_Wall)
-} 
+    instance_create( 192, 192, obj_Wall)
+    instance_create( 160, 208, obj_Wall)
+} else instance_create( 160, 192, obj_DoorUpLeft )
 //Right
 if( floorArray[room_current_x + 1, room_current_y] = -1 )
 {
-    instance_create( room_width - 32, room_height/2, obj_Wall)
-}
+    instance_create( 480, 336, obj_Wall)
+    instance_create( 448, 352, obj_Wall)
+} else instance_create( 448, 336, obj_DoorDownRight )
 //Up
 if( floorArray[room_current_x, room_current_y - 1] = -1 )
 {
-    instance_create( room_width/2 + 32, 16, obj_Wall)
-}
+    instance_create( 448, 192, obj_Wall)
+    instance_create( 480, 208, obj_Wall)
+} else instance_create( 448, 192, obj_DoorUpRight )
 //Down
 if( floorArray[room_current_x, room_current_y + 1] = -1 )
 {
-    instance_create( room_width/2 + 32, room_height - 16, obj_Wall)
-}
+    instance_create( 160, 336, obj_Wall)
+    instance_create( 192, 352, obj_Wall)
+} else instance_create( 160, 336, obj_DoorDownLeft )
 </string>
           </argument>
         </arguments>
