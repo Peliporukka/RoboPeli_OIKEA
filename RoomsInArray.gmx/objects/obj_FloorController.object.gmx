@@ -66,15 +66,11 @@ room_goto(floorArray[room_current_x, room_current_y])
           <argument>
             <kind>1</kind>
             <string>//Exit room left
-with(obj_Player)
+if obj_Player.x&lt;0
 {
-    if place_meeting(x, y, obj_DoorUpLeft)
-    {
-        room_goto(other.floorArray[room_current_x-1, room_current_y]);
-        other.room_current_x = other.room_current_x - 1;
-        obj_Player.x = 448;
-        obj_Player.y = 336;
-    }
+    room_goto(floorArray[room_current_x-1, room_current_y])
+    room_current_x = room_current_x - 1
+    obj_Player.x = room_width - sprite_width;
 }
 //Exit room right
 if obj_Player.x&gt;room_width
