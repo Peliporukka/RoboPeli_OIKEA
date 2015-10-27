@@ -12,6 +12,8 @@
     <sprite>sprites\spr_DoorUpLeft</sprite>
     <sprite>sprites\spr_DoorDownRight</sprite>
     <sprite>sprites\spr_DoorDownLeft</sprite>
+    <sprite>sprites\spr_DoorCollisionLeft</sprite>
+    <sprite>sprites\spr_DoorCollisionRight</sprite>
     <sprite>sprites\spr_Wall2</sprite>
   </sprites>
   <backgrounds name="background"/>

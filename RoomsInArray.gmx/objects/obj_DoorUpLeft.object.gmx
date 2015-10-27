@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>depth=-y
+mask_index = spr_DoorCollisionLeft
 </string>
           </argument>
         </arguments>

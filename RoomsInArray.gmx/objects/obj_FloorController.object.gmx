@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Randomize seed (for choose function)
+            <string>globalvar floorArray, room_current_x, room_current_y;
+
+//Randomize seed (for choose function)
 randomize();
 
 //Create a list of rooms in a 1-dimensional array
@@ -66,32 +68,48 @@ room_goto(floorArray[room_current_x, room_current_y])
           <argument>
             <kind>1</kind>
             <string>//Exit room left
-if obj_Player.x&lt;0
+with(obj_Player)
 {
-    room_goto(floorArray[room_current_x-1, room_current_y])
-    room_current_x = room_current_x - 1
-    obj_Player.x = room_width - sprite_width;
+    if place_meeting(x, y, obj_DoorUpLeft)
+    {
+        room_goto(global.floorArray[global.room_current_x-1, global.room_current_y])
+        global.room_current_x = global.room_current_x - 1
+        obj_Player.x = 416;
+        obj_Player.y = 320;
+    }
 }
 //Exit room right
-if obj_Player.x&gt;room_width
+with(obj_Player)
 {
-    room_goto(floorArray[room_current_x+1, room_current_y])
-    room_current_x = room_current_x + 1
-    obj_Player.x = 0 + sprite_width;
+    if place_meeting(x, y, obj_DoorDownRight)
+    {
+        room_goto(global.floorArray[global.room_current_x+1, global.room_current_y])
+        global.room_current_x = global.room_current_x + 1
+        obj_Player.x = 224;
+        obj_Player.y = 224;
+    }
 }
 //Exit room up
-if obj_Player.y&lt;0
+with(obj_Player)
 {
-    room_goto(floorArray[room_current_x, room_current_y-1])
-    room_current_y = room_current_y - 1
-    obj_Player.y = room_height - sprite_height;
+    if place_meeting(x, y, obj_DoorUpRight)
+    {
+        room_goto(global.floorArray[global.room_current_x, global.room_current_y-1])
+        global.room_current_y = global.room_current_y - 1
+        obj_Player.x = 224;
+        obj_Player.y = 320;
+    }
 }
 //Exit room down
-if obj_Player.y&gt;room_height
+with(obj_Player)
 {
-    room_goto(floorArray[room_current_x, room_current_y+1])
-    room_current_y = room_current_y + 1
-    obj_Player.y = 0 + sprite_height;
+    if place_meeting(x, y, obj_DoorDownLeft)
+    {
+        room_goto(global.floorArray[global.room_current_x, global.room_current_y+1])
+        global.room_current_y = global.room_current_y + 1
+        obj_Player.x = 416;
+        obj_Player.y = 224;
+    }
 }
 </string>
           </argument>
