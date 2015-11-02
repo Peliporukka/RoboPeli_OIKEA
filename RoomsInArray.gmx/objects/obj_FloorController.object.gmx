@@ -70,7 +70,7 @@ room_goto(floorArray[room_current_x, room_current_y])
             <string>//Exit room left
 with(obj_Player)
 {
-    if place_meeting(x, y, obj_DoorUpLeft)
+    if place_meeting(x-1, y-1, obj_DoorUpLeft)
     {
         room_goto(global.floorArray[global.room_current_x-1, global.room_current_y])
         global.room_current_x = global.room_current_x - 1
@@ -81,7 +81,7 @@ with(obj_Player)
 //Exit room right
 with(obj_Player)
 {
-    if place_meeting(x, y, obj_DoorDownRight)
+    if place_meeting(x+1, y+1, obj_DoorDownRight)
     {
         room_goto(global.floorArray[global.room_current_x+1, global.room_current_y])
         global.room_current_x = global.room_current_x + 1
@@ -92,7 +92,7 @@ with(obj_Player)
 //Exit room up
 with(obj_Player)
 {
-    if place_meeting(x, y, obj_DoorUpRight)
+    if place_meeting(x+1, y-1, obj_DoorUpRight)
     {
         room_goto(global.floorArray[global.room_current_x, global.room_current_y-1])
         global.room_current_y = global.room_current_y - 1
@@ -103,7 +103,7 @@ with(obj_Player)
 //Exit room down
 with(obj_Player)
 {
-    if place_meeting(x, y, obj_DoorDownLeft)
+    if place_meeting(x-1, y+1, obj_DoorDownLeft)
     {
         room_goto(global.floorArray[global.room_current_x, global.room_current_y+1])
         global.room_current_y = global.room_current_y + 1
@@ -179,7 +179,7 @@ if( floorArray[room_current_x, room_current_y + 1] = -1 )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>map_grid = ds_grid_create(16,12);
+            <string>map_grid = ds_grid_create(1,1);
 
 draw_set_colour(c_black);
 for( i = 0; i &lt; 64; i++)
@@ -187,12 +187,12 @@ for( i = 0; i &lt; 64; i++)
     for( j = 0; j &lt; 64; j++)
     {
         if(floorArray[i,j] != -1)
-        draw_rectangle(i*16, j*12, i*16 + 16, j*12 + 12, false);
+        draw_rectangle(i*2, j*2, i*2 + 2, j*2 + 2, false);
     }
 }
 
 draw_set_colour(c_red);
-draw_rectangle(room_current_x*16, room_current_y*12, room_current_x*16 + 16, room_current_y*12 + 12, false);
+draw_rectangle(room_current_x*2, room_current_y*2, room_current_x*2 + 2, room_current_y*2 + 2, false);
 </string>
           </argument>
         </arguments>

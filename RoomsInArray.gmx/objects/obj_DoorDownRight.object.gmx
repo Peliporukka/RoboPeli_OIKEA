@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_DoorCollisionLeft</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>depth=-y
-mask_index = spr_DoorCollisionLeft
 </string>
           </argument>
         </arguments>
